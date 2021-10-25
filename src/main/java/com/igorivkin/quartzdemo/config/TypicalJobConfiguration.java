@@ -22,7 +22,7 @@ public class TypicalJobConfiguration {
         return TriggerBuilder.newTrigger()
                 .forJob(typicalJobDetail)
                 .withIdentity("typicalJobTrigger")
-                .withSchedule(CronScheduleBuilder.cronSchedule("0/5 * * 1/1 * ? *"))
+                .withSchedule(CronScheduleBuilder.cronSchedule("0/10 * * 1/1 * ? *"))
                 .build();
     }
 }

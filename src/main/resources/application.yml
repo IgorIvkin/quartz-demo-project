@@ -26,3 +26,4 @@ spring:
             instanceId: AUTO
           threadPool:
             threadCount: 10
+    overwrite-existing-jobs: true
