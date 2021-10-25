@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: quartz-demo-project
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/quartz_db
+    username: quartz
+    password: quartz
+  quartz:
+    jdbc:
+      schema: classpath:quartz/quartz_schema.sql
+      initialize-schema: always
+    job-store-type: jdbc
+    properties:
+      org:
+        quartz:
+          jobStore:
+            isClustered: true
+            clusterCheckinInterval: 5000
+            tablePrefix: QRTZ_
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+          scheduler:
+            instanceId: AUTO
+          threadPool:
+            threadCount: 10
